@@ -1,0 +1,66 @@
+&txtRolling {
+  @keyframes popup {
+    0% {
+      transform: translate(0, 105%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  &__txt {
+    display: block;
+    line-height: inherit;
+    overflow: hidden;
+    span {
+      display: inline-block;
+      animation: popup 0.8s;
+      position: relative;
+      $interval: 0.06;
+      @for $i from 2 through 10 {
+        // 10文字まで
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{$interval * ($i - 1)}s;
+        }
+      }
+    }
+  }
+  &.--hover {
+    @keyframes rolling {
+      0% {
+        transform: translate(0, 0);
+      }
+      48% {
+        transform: translate(0, 105%);
+      }
+      49% {
+        transform: translate(1000%, 105%);
+      }
+      50% {
+        transform: translate(1000%, -105%);
+      }
+      52% {
+        transform: translate(0, -105%);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    .c-txtRolling__txt span {
+      animation: none;
+    }
+    @media #{$min960} {
+      &:hover {
+        .c-txtRolling__txt span {
+          animation: rolling 0.8s;
+          $interval: 0.06;
+          @for $i from 2 through 10 {
+            // 10文字まで
+            &:nth-of-type(#{$i}) {
+              animation-delay: #{$interval * ($i - 1)}s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

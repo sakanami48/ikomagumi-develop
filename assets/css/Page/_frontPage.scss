@@ -1,0 +1,250 @@
+&frontKV {
+  background: #fff;
+  height: calc(100vh - #{$glNavHeight-pc});
+  position: relative;
+  width: 100vw;
+  &__firstCopy {
+    @include fz(48px);
+    line-height: 1.3;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: calc(50% - #{$glNavHeight-pc});
+    transform: translate(-50%, -50%);
+    .is-show & {
+      animation: showCopy 4s forwards;
+      @keyframes showCopy {
+        0% {
+          opacity: 0;
+          filter: blur(5px);
+        }
+        10% {
+          opacity: 1;
+          filter: blur(5px);
+        }
+        25% {
+          filter: blur(0);
+        }
+        70% {
+          filter: blur(0);
+        }
+        80% {
+          opacity: 1;
+          filter: blur(5px);
+        }
+        100% {
+          opacity: 0;
+          filter: blur(5px);
+        }
+      }
+    }
+  }
+  &__contents {
+    display: flex;
+    width: 100%;
+  }
+  &__lead {
+    align-items: center;
+    display: flex;
+    flex-basis: 40%;
+    justify-content: center;
+  }
+  &__leadTxt {
+    opacity: 0;
+    .is-show & {
+      animation: showLeadCopy 1.6s forwards;
+      animation-delay: 5.6s;
+      @keyframes showLeadCopy {
+        0% {
+          filter: blur(5px);
+          opacity: 0;
+        }
+        30% {
+          filter: blur(5px);
+          opacity: 1;
+        }
+        63% {
+          filter: blur(0);
+        }
+        100% {
+          filter: blur(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__leadHead {
+    @include fz(40px);
+    line-height: 1.3;
+    @media #{$min1600} {
+      @include fz(48px);
+    }
+  }
+  &__leadCopy {
+    @include fz(18px);
+    margin: 12px 0 0;
+    @media #{$min1600} {
+      @include fz(20px);
+    }
+  }
+  &__visual {
+    flex-basis: 60%;
+    height: calc(100vh - #{$glNavHeight-pc});
+    position: relative;
+  }
+  &__kv {
+    background: {
+      image: url(http://placeimg.com/640/720/arch);
+      position: center;
+      size: cover;
+    }
+    bottom: 0;
+    height: 0;
+    position: absolute;
+    width: 100%;
+    .is-show & {
+      height: calc(100vh - #{$glNavHeight-pc});
+      transition: height 1s cubic-bezier(0.2, 0.24, 0.16, 0.99);
+      transition-delay: 4.3s;
+    }
+  }
+}
+
+&frontPageContents {
+  position: relative;
+  @media #{$min560} {
+    align-items: flex-start;
+    display: flex;
+  }
+  &__navigation {
+    flex-basis: 50%;
+  }
+  &__header {
+    padding: 16px 64px 0;
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media #{$min560} {
+      margin: 32px 0 0;
+    }
+  }
+  &__category {
+    border: solid 1px $txt-black;
+    min-width: 5em;
+    padding: 4px 0;
+    text-align: center;
+    & + & {
+      margin: 0 0 0 8px;
+    }
+  }
+  &__sections {
+  }
+  &__section {
+    & + & {
+      margin: 1px 0 0;
+    }
+  }
+  &__sectionContents {
+    align-items: center;
+    display: flex;
+  }
+  &__sectionFigure {
+    flex-basis: 36%;
+    position: relative;
+  }
+  &__sectionCaption {
+    background: $txt-black;
+    bottom: 0;
+    color: #fff;
+    min-width: 5em;
+    padding: 2px 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+  }
+  &__sectionTxtArea {
+    padding: 0 24px;
+  }
+  &__sectionHeader {
+    align-items: center;
+    display: flex;
+  }
+  &__sectionDate {
+    margin: 0 8px 0 0;
+  }
+  &__article {
+    background: rgb(250, 250, 250);
+    left: 0;
+    min-height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @media #{$min560} {
+      flex-basis: 50%;
+      opacity: 1;
+      padding: 32px;
+      pointer-events: auto;
+      position: relative;
+    }
+    &.is-show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .js-mask {
+      background: gray;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+      width: 100%;
+      z-index: 10;
+
+      &.is-close {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+  }
+  &__articleHeader {
+  }
+  &__articleInfo {
+    align-items: center;
+    display: flex;
+  }
+  &__articleDate {
+    margin: 0 8px 0 0;
+  }
+  &__contents {
+    background: #fff;
+    padding: 24px;
+  }
+}
+
+&frontPageWorks {
+  &__section {
+    background: whitesmoke;
+    display: flex;
+    padding: 24px;
+  }
+  &__txtArea {
+    padding: 0 0 0 24px;
+  }
+  &__buttonArea {
+    display: flex;
+    justify-content: flex-end;
+    margin: 32px 0 0;
+  }
+  &__button {
+    border: solid 1px gray;
+    display: block;
+    padding: 8px 16px;
+  }
+}

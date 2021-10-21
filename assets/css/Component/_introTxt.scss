@@ -1,0 +1,8 @@
+&introTxt {
+  background: $bg-gray;
+  padding: 16px 5%;
+  text-align: center;
+  @media #{$min560} {
+    padding: 16px;
+  }
+}

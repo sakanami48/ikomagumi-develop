@@ -1,0 +1,60 @@
+&list {
+  margin: -8px 0;
+  @media #{$min560} {
+    margin: -10px 0;
+  }
+  &.--noDeco {
+    .c-list__item {
+      padding: 8px 0 6px;
+      text-indent: 0;
+      @media #{$min960} {
+        padding: 10px 0 8px;
+      }
+      &::before {
+        content: none;
+      }
+    }
+  }
+  &.--number {
+    counter-reset: number;
+    .c-list__item {
+      counter-increment: number;
+      padding: 8px 0 6px 1.3em;
+      text-indent: -1.1em;
+      @media #{$min560} {
+        padding: 10px 0 8px 1.3em;
+      }
+      &::before {
+        content: counter(number) '.';
+        font-family: YakuHanMP, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN',
+          serif;
+        margin: 0;
+      }
+    }
+  }
+  &__item {
+    @include fz(14px);
+    font-weight: 500;
+    line-height: 1.6;
+    padding: 8px 0 6px 1.2em;
+    text-indent: -1em;
+    @media #{$min960} {
+      @include fz(15px);
+      padding: 10px 0 8px 1.2em;
+    }
+    &.--spBt {
+      border-top: solid 1px $line-gray;
+      @media #{$min560} {
+        border-top: none;
+      }
+    }
+    & + & {
+      border-top: solid 1px $line-gray;
+    }
+    &::before {
+      content: '・';
+      font-family: 'Noto Sans JP', sans-serif;
+      margin: 0 0.2em 0 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+&sampleList {
+  &__item {
+    @include fz(14px);
+    border-bottom: solid 1px lightgray;
+    @media #{$min960} {
+      @include fz(16px);
+    }
+    & + & {
+      margin: 6px 0 0;
+      @media #{$min960} {
+        margin: 10px 0 0;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    @media #{$min960} {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+  }
+  &__heading {
+  }
+  &__date {
+    flex-basis: 120px;
+  }
+  &__update {
+    color: #fff;
+    padding: 3px 6px 4px;
+  }
+}

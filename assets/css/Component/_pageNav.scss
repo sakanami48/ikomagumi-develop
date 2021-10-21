@@ -1,0 +1,42 @@
+&pageNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -12px 0 0 -10px;
+  padding: 24px 5% 0;
+  @media #{$min560} {
+    margin: -16px 0 0 -16px;
+    padding: 56px 0 0;
+  }
+  &__item {
+    margin: 12px 0 0 10px;
+    padding: 0 6px 16px;
+    position: relative;
+    @media #{$min560} {
+      margin: 16px 0 0 16px;
+    }
+    @media #{$min960} {
+      &:hover {
+        &::after {
+          content: '';
+          transform: translateY(5px);
+        }
+      }
+    }
+    &::after {
+      background: {
+        image: url(../img/common/arrrow__scroll.svg);
+        repeat: no-repeat;
+        size: contain;
+      }
+      bottom: 0;
+      content: '';
+      height: 10px;
+      left: calc(50% - 5px);
+      position: absolute;
+      transform: translateY(0);
+      transition: transform 0.2s;
+      width: 10px;
+    }
+  }
+}

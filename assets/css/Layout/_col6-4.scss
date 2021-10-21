@@ -1,0 +1,32 @@
+&col6-4 {
+  display: flex;
+  flex-flow: column;
+  @media #{$min560} {
+    flex-flow: row;
+    justify-content: space-between;
+  }
+  &.--spReverse {
+    flex-flow: column-reverse;
+    @media #{$min560} {
+      flex-flow: row;
+    }
+  }
+  &__6 {
+    flex-basis: calc(60% - 28px);
+    & + .l-col6-4__4 {
+      margin: 24px 0 0;
+      @media #{$min560} {
+        margin: 0;
+      }
+    }
+  }
+  &__4 {
+    flex-basis: calc(40% - 28px);
+    & + .l-col6-4__6 {
+      margin: 24px 0 0;
+      @media #{$min560} {
+        margin: 0;
+      }
+    }
+  }
+}

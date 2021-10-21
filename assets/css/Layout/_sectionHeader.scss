@@ -1,0 +1,12 @@
+&sectionHeader {
+  margin: 0 0 32px;
+  @media #{$min560} {
+    margin: 0 0 48px;
+  }
+  &.--small {
+    margin: 0 0 6px;
+    @media #{$min560} {
+      margin: 0 0 10px;
+    }
+  }
+}

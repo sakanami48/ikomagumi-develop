@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/* ===============================================================
+  Foundation
+=============================================================== */
+/* ----------------
+【初期設定】
+reset.scss：cssのリセット
+setting.scss：ブレイクポイント、関数の設定
+---------------- */
+@import 'Foundation/setting';
+@import 'Foundation/reset';
+
+/* ===============================================================
+  Layout
+=============================================================== */
+/* ----------------
+【ページ内で共通して使うレイアウト】
+header:セクション見出しの余白
+section：章・節・段落など
+---------------- */
+.l- {
+  @import 'Layout/2col';
+  @import 'Layout/article';
+  @import 'Layout/body';
+  @import 'Layout/col3-7';
+  @import 'Layout/col6-4';
+  @import 'Layout/contents';
+  @import 'Layout/section';
+  @import 'Layout/sectionHeader';
+}
+
+/* ===============================================================
+  Component
+=============================================================== */
+/* ----------------
+【ページ内で共通して使うコンポーネント】
+---------------- */
+.c- {
+  @import 'Component/accordion';
+  @import 'Component/borderBlock';
+  @import 'Component/breadcrumb';
+  @import 'Component/btn';
+  @import 'Component/enLargeAlphabet';
+  @import 'Component/figBlock';
+  @import 'Component/footer';
+  @import 'Component/globalNav';
+  @import 'Component/hiddenTxt';
+  @import 'Component/introTxt';
+  @import 'Component/header';
+  @import 'Component/heading';
+  @import 'Component/historyList';
+  @import 'Component/list';
+  @import 'Component/pageHeader';
+  @import 'Component/pageIntro';
+  @import 'Component/pagenation';
+  @import 'Component/pageNav';
+  @import 'Component/sampleList';
+  @import 'Component/table';
+  @import 'Component/tag';
+  @import 'Component/txtRolling';
+}
+
+/* ===============================================================
+  Page
+=============================================================== */
+/* ----------------
+【各ページ固有のレイアウト】
+---------------- */
+.p- {
+  @import 'Page/404';
+  @import 'Page/company';
+  @import 'Page/frontPage';
+  @import 'Page/recruit';
+  @import 'Page/single';
+}

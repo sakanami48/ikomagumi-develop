@@ -1,0 +1,9 @@
+&pageHeader {
+  &__txtArea {
+    padding: 48px 5% 0;
+    text-align: center;
+    @media #{$min560} {
+      padding: 80px 64px 0;
+    }
+  }
+}

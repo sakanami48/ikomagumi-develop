@@ -1,0 +1,27 @@
+&breadcrumb {
+  display: flex;
+  padding: 20px 5% 0;
+  @media #{$min960} {
+    padding: 0 64px;
+  }
+  &__item {
+    color: lightgray;
+    line-height: 1.6;
+    &:last-of-type {
+      color: $txt-black;
+    }
+    & + & {
+      padding: 0 0 0 40px;
+      position: relative;
+      &::before {
+        background: lightgray;
+        content: '';
+        height: 1px;
+        left: 8px;
+        position: absolute;
+        top: 50%;
+        width: calc(40px - 16px);
+      }
+    }
+  }
+}

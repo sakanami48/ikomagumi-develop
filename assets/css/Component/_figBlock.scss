@@ -1,0 +1,10 @@
+&figBlock {
+  background: $bg-gray;
+  padding: 20px 5%;
+  @media #{$min960} {
+    padding: 32px 24px;
+  }
+  &__img {
+    width: 100%;
+  }
+}

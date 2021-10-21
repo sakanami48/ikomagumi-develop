@@ -1,0 +1,9 @@
+&404{
+  padding: 0 0 40px;
+  @media #{$min560}{
+    padding: 0 0 80px;
+  }
+  &__intro{
+    text-align: center;
+  }
+}

@@ -1,0 +1,35 @@
+&borderBlock {
+  @include fz(14px);
+  line-height: 1.4;
+  padding: 0.7em 0 0;
+  position: relative;
+  @media #{$min560} {
+    @include fz(15px);
+  }
+  &__heading {
+    @include mincho;
+    background: #fff;
+    display: block;
+    font-size: inherit;
+    height: 1.4em;
+    left: 50%;
+    line-height: inherit;
+    min-width: calc(10em + 16 * 2px);
+    padding: 0 16px;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    @media #{$min560} {
+      min-width: calc(10em + 32 * 2px);
+      padding: 0 32px;
+    }
+  }
+  &__contents {
+    font-size: inherit;
+    border: solid 1px $txt-black;
+    padding: calc(16px + 0.7em) 5% 16px;
+    @media #{$min560} {
+      padding: calc(24px + 0.7em) 32px 24px;
+    }
+  }
+}

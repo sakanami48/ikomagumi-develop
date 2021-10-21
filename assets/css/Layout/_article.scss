@@ -1,0 +1,11 @@
+&article {
+  &Wrapper {
+  }
+  &Inner {
+    margin: 0 auto;
+    width: 90%;
+    @media #{$min960} {
+      width: 960px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+&historyList {
+  @include fz(14px);
+  @media #{$min560} {
+    @include fz(15px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px 0;
+  }
+  &__day,
+  &__txt {
+    line-height: 1.6;
+    @media #{$min560} {
+      &:not(:first-of-type) {
+        border-top: solid 1px $line-gray;
+      }
+    }
+  }
+  &__day {
+    flex-basis: 10em;
+    padding: 0 0 6px;
+    &:not(:first-of-type) {
+      border-top: solid 1px $line-gray;
+      padding: 12px 0 4px;
+    }
+    @media #{$min560} {
+      padding: 8px 0;
+    }
+  }
+  &__txt {
+    flex-basis: calc(100% - 10em);
+    padding: 0 0 12px;
+    text-align: justify;
+    @media #{$min560} {
+      padding: 8px 0;
+    }
+  }
+}

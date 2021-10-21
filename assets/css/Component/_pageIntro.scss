@@ -1,0 +1,15 @@
+&pageIntro {
+  display: flex;
+  justify-content: center;
+  &__innter {
+  }
+  &__heading {
+  }
+  &__txt {
+    line-height: 2;
+    margin: calc(20px - 0.5em) 0 0;
+    @media #{$min960} {
+      margin: calc(32px - 0.5em) 0 0;
+    }
+  }
+}

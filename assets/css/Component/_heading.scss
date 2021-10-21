@@ -1,0 +1,38 @@
+&heading {
+  &Small {
+    @include mincho;
+    @include fz(16px);
+    font-weight: 500;
+    line-height: 1.8;
+    @media #{$min560} {
+      @include fz(18px);
+    }
+    &--white {
+      color: #fff;
+    }
+  }
+  &Medium {
+    @include mincho;
+    @include fz(19px);
+    font-weight: 500;
+    line-height: 1.6;
+    @media #{$min560} {
+      @include fz(25px);
+    }
+    &--white {
+      color: #fff;
+    }
+  }
+  &Large {
+    @include mincho;
+    @include fz(24px);
+    font-weight: 500;
+    line-height: 1.4;
+    @media #{$min560} {
+      @include fz(32px);
+    }
+    &--white {
+      color: #fff;
+    }
+  }
+}

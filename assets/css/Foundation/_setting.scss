@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+// ブレイクポイント
+$min360: 'only screen and (min-width:360px)'; // minSP < SP
+$min560: 'only screen and (min-width:560px)'; // SP < TB
+$min960: 'only screen and (min-width:960px)'; // TB < PC
+$min1600: 'only screen and (min-width:1600px)'; // PC_wide
+
+$glNavHeight-pc: 72px;
+$glNavHeight-sp: 56px;
+
+@mixin fz($size) {
+  font-size: $size;
+  font-size: ($size / 16px) * 1rem;
+}
+
+@mixin mincho() {
+  font-family: YakuHanMP, sorts-mill-goudy, dnp-shuei-ymincho-std, 'Yu Mincho',
+    YuMincho, 'Hiragino Mincho ProN', serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin gothic() {
+  font-family: YakuHanJP_Narrow, 'Yu Gothic Medium', 'Yu Gothic', YuGothic,
+    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+}
+
+/* ----- color setting ----- */
+$bland-darkBlue: #142c4e;
+$bland-lightBlue: #254674;
+$txt-black: #1d1d1d;
+$bg-gray: #f8f9fb;
+$bg-darkGray: #eff2f7;
+$line-gray: #d9d9d9;

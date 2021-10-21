@@ -1,0 +1,100 @@
+&globalNav {
+  align-items: center;
+  // background: #fff;
+  display: flex;
+  height: $glNavHeight-sp;
+  justify-content: space-between;
+  padding: 0 0 0 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  @media #{$min960} {
+    // background: transparent;
+    height: $glNavHeight-pc;
+    padding: 0 32px;
+    position: relative;
+  }
+  &.js-front {
+    opacity: 0;
+  }
+  .is-show & {
+    animation: showGlNav 1.3s forwards;
+    animation-delay: 6.5s;
+    @keyframes showGlNav {
+      0% {
+        filter: blur(5px);
+        opacity: 0;
+      }
+      30% {
+        filter: blur(5px);
+        opacity: 1;
+      }
+      63% {
+        filter: blur(0);
+      }
+      100% {
+        filter: blur(0);
+        opacity: 1;
+      }
+    }
+  }
+  &__nav {
+    display: none;
+    @media #{$min960} {
+      align-items: center;
+      display: flex;
+    }
+  }
+  &__section {
+    & + & {
+      margin: 0 0 0 24px;
+    }
+  }
+  &__link {
+    display: flex;
+    padding: 12px 6px;
+    &.--block {
+      border: solid 1px $bland-darkBlue;
+      color: $bland-darkBlue;
+      padding: 10px 16px;
+      position: relative;
+      transition: color 0.3s;
+      &::after {
+        background: $bland-darkBlue;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s;
+        width: 100%;
+        z-index: -1;
+      }
+      &:hover {
+        color: #fff;
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+  &__button {
+    background: $bland-lightBlue;
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 52px;
+    @media #{$min960} {
+      display: none;
+    }
+  }
+  // &__hiddenTxt {
+  //   height: 1px;
+  //   overflow: hidden;
+  //   position: absolute;
+  //   width: 1px;
+  // }
+}

@@ -1,0 +1,44 @@
+&companyFig {
+  &.--person {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: column;
+    @media #{$min560} {
+      display: block;
+    }
+    .p-companyFig__img {
+      width: 33%;
+      @media #{$min560} {
+        width: 100%;
+      }
+    }
+    .p-companyFig__caption {
+      text-align: right;
+      @media #{$min560} {
+        text-align: left;
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+  }
+  &__caption {
+    line-height: 1.8;
+    margin: calc(18px - 0.4em) 0 0;
+  }
+  &__name {
+    line-height: 1.8;
+    margin: calc(-0.4em + 3px) 0 0;
+  }
+  &__capSection {
+    line-height: 1.8;
+    & + & {
+      margin: calc(-0.4em + 12px) 0 0;
+    }
+  }
+}
+&companyGreet {
+  line-height: 1.8;
+  margin: -0.4em 0;
+  text-align: justify;
+}

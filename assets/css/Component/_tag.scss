@@ -1,0 +1,8 @@
+&tag {
+  @include gothic;
+  @include fz(14px);
+  background: $bland-darkBlue;
+  color: #fff;
+  min-width: 6em;
+  text-align: center;
+}

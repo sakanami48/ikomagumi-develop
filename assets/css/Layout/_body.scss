@@ -1,0 +1,6 @@
+&body {
+  padding: $glNavHeight-sp 0 0;
+  @media #{$min960} {
+    padding: 0;
+  }
+}
